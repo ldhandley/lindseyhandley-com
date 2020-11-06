@@ -1,6 +1,7 @@
 #lang at-exp racket
 
-(require website-js
+(require (only-in website md)
+         website-js
 	 "./lang.rkt")
 
 (define (site)
@@ -10,7 +11,7 @@
 	  (content
 	    (container class: "p-5"
 		       @md{
-		       # Stephen R. Foster, Ph.D.
+		       # Lindsey D. Handley, Ph.D.
 
 		       -------
 		       }
@@ -24,12 +25,14 @@
 
 			  (project-card
 			    "ThoughtSTEM")
+			  
+                          (project-card
+			    "Don't Teach Coding: Until You Read This Book")
 
 			  (project-card
 			    "Blog")
 
-			  (project-card
-			    "Gratitude"))
+                          )
 		       }
 
 		       @md{
