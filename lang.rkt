@@ -10,7 +10,9 @@
     (map (curry div class: "p-2 col-xs-12 col-md-6 col-lg-4")
 	 cards)))
 
-(define (project-card [head "Project name"]
+(define (project-card #:class [class ""]
+                      [head "Project name"]
 		      [body "Project description"])
-  (card (card-header head)
+  (card class: class 
+        (card-header head)
 	(card-body body)))

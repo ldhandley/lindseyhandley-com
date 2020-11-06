@@ -17,17 +17,20 @@
 		       }
 
 		       @md{
-		       ## Projects
+		       ## Current Projects
 
-		       @(card-row
+		       @(card-deck  
 			  (project-card
+                            #:class "bg-warning"
 			    "CodeSpells")
 
 			  (project-card
+                            #:class "bg-success"
 			    "ThoughtSTEM")
 			  
                           (project-card
-			    "Don't Teach Coding: Until You Read This Book")
+                            #:class "bg-info"
+			    "CSEd Publications")
 
 			  (project-card
 			    "Blog")
@@ -38,9 +41,9 @@
 		       @md{
                        ## Past Projects
 
-		       @(card-row
+		       @(card-deck
 			  (project-card
-			    "MetaCoders"
+			    "MetaCoders K-12 CSEd"
 			    @md{
 			     Sub-projects:
 
@@ -50,17 +53,7 @@
 			    })
 
 			  (project-card
-			    "2D Games"
-			    @md{
-			     Sub-projects:
-
-			     * a
-			     * b
-			     * c
-			    })
-
-			  (project-card
-			    "Website Tech"
+			    "LearnToMod"
 			    @md{
 			     Sub-projects:
 
