@@ -21,15 +21,15 @@
 
 		       @(card-deck  
 			  (project-card
-                            #:class "bg-warning"
+                            #:class "bg-warning text-white"
 			    "CodeSpells")
 
 			  (project-card
-                            #:class "bg-success"
+                            #:class "bg-success text-white"
 			    "ThoughtSTEM")
 			  
                           (project-card
-                            #:class "bg-info"
+                            #:class "bg-info text-white"
 			    "CSEd Publications")
 
 			  (project-card
