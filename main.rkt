@@ -1,14 +1,16 @@
-#lang at-exp racket
+  #lang at-exp racket
 
-(require (only-in website md)
-         website-js
-	 "./lang.rkt")
+  (require (only-in website md)
+           website-js
+           "./html-helpers.rkt"
+         )
 
 (define (site)
   (list
     (bootstrap-files)
     (page index.html
 	  (content
+            (sticky-navbar)
 	    (container class: "p-5"
 		       @md{
 		       # Lindsey D. Handley, Ph.D.
@@ -20,19 +22,19 @@
 		       ## Current Projects
 
 		       @(card-deck  
-			  (project-card
+			  (current-project-card
                             #:class "bg-warning text-white"
 			    "CodeSpells")
 
-			  (project-card
+			  (current-project-card
                             #:class "bg-success text-white"
 			    "ThoughtSTEM")
 			  
-                          (project-card
+                          (current-project-card
                             #:class "bg-info text-white"
 			    "CSEd Publications")
 
-			  (project-card
+			  (current-project-card
 			    "Blog")
 
                           )
@@ -42,7 +44,7 @@
                        ## Past Projects
 
 		       @(card-deck
-			  (project-card
+			  (current-project-card
 			    "MetaCoders K-12 CSEd"
 			    @md{
 			     Sub-projects:
@@ -52,7 +54,7 @@
 			     * c
 			    })
 
-			  (project-card
+			  (current-project-card
 			    "LearnToMod"
 			    @md{
 			     Sub-projects:
@@ -62,7 +64,7 @@
 			     * c
 			    })
 
-			  (project-card
+			  (current-project-card
 			    "Ph.D. Research"))
 
 
