@@ -2,6 +2,7 @@
 
 (provide sticky-navbar
          current-project-card
+         past-project-card
          green
          green-dark-1
          orange
@@ -34,43 +35,7 @@
 (define (sticky-navbar)
 
   (list
-   (style/inline
-    @~a{
- .navbar:before{
-  background: purple-dark-1;
-  @;background: linear-gradient(-45deg, #542E85, #f8f9fa);
-  @;background: linear-gradient(-45deg, #542E85, #f8f9fa);
-  content: '';
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  position: absolute;
-  z-index: -1;
-  opacity: 0.9;
-  transition: opacity 1s ease 0s;
- }
- .navbar.solid:before {
-  opacity: 1;
- }
- })
-   (script/inline
-     @~a{
-        $(document).ready(function() {
-                // Transition effect for navbar
-                $(window).scroll(function() {
-                  var navContent = document.getElementById('navbarSupportedContent');
-                  // checks if window is scrolled more than 5% of screen width, adds/removes solid class
-                  if($(this).scrollTop() > (.05 * window.innerHeight) ||
-                      navContent.classList.contains("show")) {
-                      $('.navbar').addClass('solid');
-                  } else {
-                      $('.navbar').removeClass('solid');
-                  }
-                });
-        });
-     })
-  (nav class: "navbar fixed-top navbar-dark navbar-expand-md bg-transparent"
+  (nav class: "navbar fixed-top navbar-dark bg-dark navbar-expand-md"
        style: (properties padding: "0 0 0 0")
     (a class: "navbar-brand"
        href: "/index.html"
@@ -97,10 +62,10 @@
   }})
     (div class: "collapse navbar-collapse" id: "navbarSupportedContent"
       (ul class: "navbar-nav ml-auto"
-          (my-nav-link "./index.html" "CodeSpells")
-          (my-nav-link "./index.html" "ThoughtSTEM")
-          (my-nav-link "./index.html" "CSEd Publications")
-          (my-nav-link "./index.html" "Blog")
+          (my-nav-link "https://codespells.org" "CodeSpells")
+          (my-nav-link "https://www.learntomod.com" "LearnToMod")
+          (my-nav-link "https://www.thoughtstem.com" "ThoughtSTEM")
+          (my-nav-link "https://www.dont-teach.com/coding" "CSEd Publications")
           (my-social-media-link "facebook" "https://www.facebook.com/handley.lindsey/") 
           (my-social-media-link "twitter" "https://twitter.com/LindseyDHandley") 
           (my-social-media-link "instagram" "https://www.instagram.com/lindseyhandley/") 
@@ -122,16 +87,24 @@
             )]
         [(string=? type "twitter")
          (a href: to 
-            class: "fab fa-twitter-square fa-2x p-1")]
+            class: "fab fa-twitter-square fa-2x p-1"
+            style: (properties color: orange)
+         )]
         [(string=? type "linkedin")
          (a href: to 
-            class: "fab fa-linkedin fa-2x p-1")]
+            class: "fab fa-linkedin fa-2x p-1"
+            style: (properties color: orange)
+         )]
         [(string=? type "instagram")
          (a href: to 
-            class: "fab fa-instagram-square fa-2x p-1")]
+            class: "fab fa-instagram-square fa-2x p-1"
+            style: (properties color: orange)
+         )]
         [(string=? type "github")
          (a href: to 
-            class: "fab fa-github fa-2x p-1")]
+            class: "fab fa-github fa-2x p-1"
+            style: (properties color: orange)
+         )]
     )
   )
 
@@ -141,9 +114,18 @@
 	 cards)))
 
 (define (current-project-card #:class [class ""]
-                      [head "Project name"]
-		      [body "Project description"])
-  (card class: class
-        style: (properties color: green)
-        (card-header head)
+                              #:name [name "Project name"]
+                              #:body [body "Project description"])
+  (card style: (properties background-color: green)
+        (card-header style: (properties background-color: green-dark-1) 
+        (b name))
+	(card-body body)))
+
+(define (past-project-card #:class [class ""]
+                              #:name [name "Project name"]
+                              #:body [body "Project description"])
+  (card class: "text-white"
+        style: (properties background-color: purple)
+        (card-header style: (properties background-color: purple-dark-1)
+        (b name))
 	(card-body body)))

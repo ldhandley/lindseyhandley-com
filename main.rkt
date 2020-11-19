@@ -9,67 +9,52 @@
   (list
     (bootstrap-files)
     (page index.html
-	  (content
+          (content
             (sticky-navbar)
-	    (container class: "p-5"
-		       @md{
-		       # Lindsey D. Handley, Ph.D.
+            (container class: "p-5" style: (properties margin-top:"50px")
+                       @md{
+                       # Current Projects
 
-		       -------
-		       }
-
-		       @md{
-		       ## Current Projects
-
-		       @(card-deck  
-			  (current-project-card
-                            #:class "bg-warning text-white"
-			    "CodeSpells")
-
-			  (current-project-card
-                            #:class "bg-success text-white"
-			    "ThoughtSTEM")
-			  
+                       @(card-deck  
                           (current-project-card
-                            #:class "bg-info text-white"
-			    "CSEd Publications")
+                            #:name "CodeSpells"
+                            #:body "We're currently building a 3D video game and video game development platform where you play the role of a wizard that crafts magical spells with code. Learn more here...")
 
-			  (current-project-card
-			    "Blog")
+                          (current-project-card
+                            #:name "ThoughtSTEM"
+                            #:body "Between 2012 and 2020, we taught thousands of students across San Diego coding through after-school programs, camps, and workshops. Learn more here...")
+
+                          (current-project-card
+                            #:name "CSEd Publications"
+                            #:body @md{We wrote @i{Don't Teach Coding: Until You Read Book} for educators, parents, and anyone who is pursuing coding as a life skill. Learn more here...})
 
                           )
-		       }
+                       }
+                       (div class: "p-2")
+                       @md{
+                       # Past Projects
 
-		       @md{
-                       ## Past Projects
+                       @(card-deck
+                          (past-project-card
+                            #:name "MetaCoders K-12 CSEd"
+                            #:body @md{
+                            In 2020, we launched a non-profit with a mission to teach K-12 students not only programming, but also how to learn programming languages. MetaCoders took over all of ThoughtSTEM's in-person educational programs, freeing ThoughtSTEM to build coding educational software.
+                            })
 
-		       @(card-deck
-			  (current-project-card
-			    "MetaCoders K-12 CSEd"
-			    @md{
-			     Sub-projects:
+                          (past-project-card
+                            #:name "LearnToMod"
+                            #:body @md{
+                            ThoughtSTEM built LearnToMod, an platform that teaches kids coding by teaching them how to mod their favorite video game -- Minecraft. The software has been used to teach over 200,000 students how to code. 
+                            })
 
-			     * a
-			     * b
-			     * c
-			    })
-
-			  (current-project-card
-			    "LearnToMod"
-			    @md{
-			     Sub-projects:
-
-			     * a
-			     * b
-			     * c
-			    })
-
-			  (current-project-card
-			    "Ph.D. Research"))
-
-
-		       }
-		       )))))
+                          (past-project-card
+                            #:name "Ph.D. Research"
+                            #:body @md{
+                            From 2010-2015, I studied the protein interactions between thrombin and thrombomodulin at UC San Diego in the lab of Elizabeth Komives. I'm a biochemist turned coder. 
+                            }
+                            ))
+                       }
+                       )))))
 
 (module+ main
 	 (render #:to "out"
