@@ -12,7 +12,8 @@
 
 (require website-js
          (only-in 2htdp/image color-alpha)
-         image-coloring)
+         image-coloring
+         "./imgs.rkt")
 
 (define (darken-color color amount)
   (change-color-brightness (- amount) color ))
@@ -21,6 +22,7 @@
 (define green "#3FD972") 
 (define green-base-color (hex->color green))
 (define green-dark-1 (~a "#" (color->hex-string (darken-color green-base-color 15))))
+;(define green-dark-2 (~a "#" (color->hex-string (darken-color green-dark-1 15))))
 
 ;Orange
 (define orange "#f9a21d") 
@@ -36,14 +38,14 @@
 
   (list
   (nav class: "navbar fixed-top navbar-dark bg-dark navbar-expand-md"
-       style: (properties padding: "0 0 0 0")
+       style: (properties padding: "0 10px 0 10px")
     (a class: "navbar-brand"
        href: "/index.html"
        style: (properties color: "white"
                           padding-top: "0"
                           padding-bottom: "0"
                           )
-       (img src: "https://scontent-lax3-2.xx.fbcdn.net/v/t1.0-1/cp0/p50x50/93418588_10100674605427360_1483847794165809152_o.jpg?_nc_cat=107&ccb=2&_nc_sid=7206a8&_nc_ohc=EKvAn-_u89wAX8sOQC5&_nc_ht=scontent-lax3-2.xx&tp=27&oh=19300b472f54f056c908407d79707544&oe=5FCA9E85"
+       #;(img src: (profile-pic-img-path) 
                  height: 40
                  alt: "Lindsey Handley")
        "    Lindsey D. Handley, Ph.D."
@@ -114,18 +116,26 @@
 	 cards)))
 
 (define (current-project-card #:class [class ""]
+                              #:link [link "https://www.google.com"]
                               #:name [name "Project name"]
                               #:body [body "Project description"])
   (card style: (properties background-color: green)
         (card-header style: (properties background-color: green-dark-1) 
         (b name))
-	(card-body body)))
+	  (card-body body)
+    (card-footer class: "p-0 m-0" 
+      (a style: (properties text-decoration: "none") href: link
+        (button-primary style: (properties background-color: green-dark-1 border: "0") class: "btn-block rounded-0" "Learn More...")))))
 
 (define (past-project-card #:class [class ""]
+                              #:link [link "https://www.google.com"]
                               #:name [name "Project name"]
                               #:body [body "Project description"])
   (card class: "text-white"
         style: (properties background-color: purple)
         (card-header style: (properties background-color: purple-dark-1)
         (b name))
-	(card-body body)))
+	(card-body body)
+    (card-footer class: "p-0 m-0" 
+      (a style: (properties text-decoration: "none") href: link
+        (button-primary style: (properties background-color: purple-dark-1 border: "0") class: "btn-block rounded-0" "Learn More...")))))
