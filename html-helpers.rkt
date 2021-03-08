@@ -45,7 +45,7 @@
                           padding-top: "0"
                           padding-bottom: "0"
                           )
-       #;(img src: (profile-pic-img-path) 
+       (img src: (prefix/pathify profile-pic-img-path) 
                  height: 40
                  alt: "Lindsey Handley")
        "    Lindsey D. Handley, Ph.D."
