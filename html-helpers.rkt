@@ -46,9 +46,11 @@
                           padding-bottom: "0"
                           )
        (img src: (prefix/pathify profile-pic-img-path) 
-                 height: 40
-                 alt: "Lindsey Handley")
-       "    Lindsey D. Handley, Ph.D."
+                 height: 80
+                 alt: "Lindsey Handley's profile picture")
+       (div class: "pl-4 pb-0 align-middle"
+            style: (properties display: "inline-block")
+        (h1 "Lindsey D. Handley, Ph.D."))
        )
     (button id: "navbarToggler" 'onclick: "toggleNavbarSolid();" class: "navbar-toggler" type: "button" `data-toggle: "collapse" `data-target: "#navbarSupportedContent" `aria-controls: "navbarSupportedContent" `aria-expanded: "false" `aria-label: "Toggle navigation"
         (span class: "navbar-toggler-icon")
