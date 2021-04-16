@@ -21,17 +21,17 @@
                           (current-project-card
                             #:name "CodeSpells"
                             #:link "https://codespells.org/"
-                            #:body "We're currently building a 3D video game and video game development platform where you play the role of a wizard that crafts magical spells with code. Learn more here...")
+                            #:body "We're currently building a 3D video game and video game development platform where you play the role of a wizard that crafts magical spells with code.")
 
                           (current-project-card
                             #:name "ThoughtSTEM"
                             #:link "https://www.thoughtstem.com/"
-                            #:body "Between 2012 and 2020, we taught thousands of students across San Diego coding through after-school programs, camps, and workshops. Learn more here...")
+                            #:body "Between 2012 and 2020, we taught thousands of students across San Diego coding through after-school programs, camps, and workshops.")
 
                           (current-project-card
                             #:name "CSEd Publications"
                             #:link "https://www.dont-teach.com/coding"
-                            #:body @md{We wrote @i{Don't Teach Coding: Until You Read Book} for educators, parents, and anyone who is pursuing coding as a life skill. Learn more here...})
+                            #:body @md{We wrote @i{Don't Teach Coding: Until You Read Book} for educators, parents, and anyone who is pursuing coding as a life skill.})
 
                           )
                        }
@@ -51,7 +51,7 @@
                             #:link "https://www.learntomod.com/"
                             #:name "LearnToMod"
                             #:body @md{
-                            ThoughtSTEM built LearnToMod, an platform that teaches kids coding by teaching them how to mod their favorite video game -- Minecraft. The software has been used to teach over 200,000 students how to code. 
+                            We built LearnToMod, an platform that teaches kids coding by teaching them how to mod their favorite video game -- Minecraft. The software has been used to teach over 200,000 students how to code. 
                             })
 
                           (past-project-card

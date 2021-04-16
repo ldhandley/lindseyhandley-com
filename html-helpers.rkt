@@ -67,7 +67,6 @@
     (div class: "collapse navbar-collapse" id: "navbarSupportedContent"
       (ul class: "navbar-nav ml-auto"
           (my-nav-link "https://codespells.org" "CodeSpells")
-          (my-nav-link "https://www.learntomod.com" "LearnToMod")
           (my-nav-link "https://www.thoughtstem.com" "ThoughtSTEM")
           (my-nav-link "https://www.dont-teach.com/coding" "CSEd Publications")
           (my-social-media-link "facebook" "https://www.facebook.com/handley.lindsey/") 
@@ -80,6 +79,7 @@
 (define (my-nav-link to text)
   (nav-item
     (a class: "nav-link mr-3 text-white"
+       style: (properties font-size: 20)
        href: (pathify (add-path-prefix to))
        text)))
 
